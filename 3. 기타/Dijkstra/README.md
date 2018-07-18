@@ -20,10 +20,10 @@
 
 1. 출발점으로 부터의 최단거리를 저장할 배열 DIST를 만들고 모든 노드를 미방문(큰 값: Ingeter.MAX_VALUE)) 상태로 표시한다.
 
-| NODE  | 1    | 2     | 3     | 4     | 5     |
-|-------|------|-------|-------|-------|-------|
-| DIST  | 0    | MAX   | MAX   | MAX   | MAX   |
-| Check | true | false | false | false | false |
+    | NODE  | 1    | 2     | 3     | 4     | 5     |
+    |-------|------|-------|-------|-------|-------|
+    | DIST  | 0    | MAX   | MAX   | MAX   | MAX   |
+    | Check | true | false | false | false | false |
 
 2. 시작노드를 최초 방문노드로 설정한다(t = 0)
 
