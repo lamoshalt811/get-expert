@@ -1,3 +1,0 @@
-# 한국 정보 올림피아드 문제
-
-https://www.acmicpc.net/category/55
