@@ -6,6 +6,16 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Debug (Launch)-SelfNumber",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "SelfNumber",
+            "args": ""
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch)-Dijkstra",
             "request": "launch",
             "cwd": "${workspaceFolder}",

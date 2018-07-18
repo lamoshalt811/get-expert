@@ -1,0 +1,1 @@
+# SelfNumber [link](https://www.acmicpc.net/problem/4673)
