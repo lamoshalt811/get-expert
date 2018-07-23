@@ -1,0 +1,1 @@
+# 별찍기 - 11 [link](https://www.acmicpc.net/problem/2448)
