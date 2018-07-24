@@ -52,4 +52,4 @@
 
 > 우선순위 큐를 사용하여 다음 방문노드를 결정하면 O(ElogN)으로 시간복잡도가 줄어든다.
 
-## [깃헙에서 소스 보기](https://github.com/lamoshalt811/get-expert/blob/master/3.%20%EA%B8%B0%ED%83%80/Dijkstra/Dijkstra.java)
+## [깃헙에서 소스 보기](https://github.com/lamoshalt811/get-expert/blob/master/3.etc/Dijkstra/Dijkstra.java)
