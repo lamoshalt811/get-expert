@@ -11,7 +11,7 @@ int main(void) {
 				
 		int i=0,  w=1, sum=0;
 		while(str[i] != '\n') {
-			printf("%c", str[i]);
+			
 			if(str[i] == 'O') {
 				sum += w;
 				++w;
