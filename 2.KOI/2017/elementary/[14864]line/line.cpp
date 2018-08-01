@@ -2,8 +2,6 @@
 
 int N, M;
 int arr[100001];
-int out[100001];
-int in[100001];
 int check[100001];
 
 int main(void) {
@@ -13,33 +11,22 @@ int main(void) {
 	scanf("%d %d", &N, &M);
 	
 	for(i=1; i<=N; i++) {
-		arr[i] = 0;
-		out[i] = 0;
-		in[i] = 0;
+		arr[i] = i;
 		check[i] = 0;
 	}
 		
 	for(i=0; i<M; i++) {
 		scanf("%d %d", &X, &Y);
-		
-		out[X]++;
-		in[Y]++;
+		arr[X]++;
+		arr[Y]--;
 	}
 	
 	for(i=1; i<=N; i++) {
-			
-		if(out[i] == 0) {
-			arr[i] = i - in[i];
-		} else {
-			arr[i] = i + out[i] - in[i];
-		}
-			
-		if(check[arr[i]] == 0) {
-			check[arr[i]] = 1;
-		} else {
+		if(check[arr[i]] > 0) {
 			printf("-1");
 			return 0;
 		}
+		check[arr[i]] = 1;
 	}
 		
 	printf("%d", arr[1]);
