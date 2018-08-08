@@ -1,60 +1,81 @@
 #include <stdio.h>
 
-void space(int n);
-void floor1(int n); 
-void floor2(int n); 
-void floor3(int n); 
-int count(int n);
+char map[6200][6200];
+
+void arrayCopy(int dx, int dy, int size) {
+	int i, j;
+	
+	for(i=0; i<size; i++) {
+		for(j=0; j<size; j++) {
+			map[i+dy][j+dx] = map[i][j];
+		}
+	}
+}
 
 int main(void) {
     
-    int i=0;
-    int n = 6;
-    // scanf("%d", &n);
+    int i, j, n;
+	scanf("%d", &n);
 
-    while(i<n) {
-        int cnt = count((i+3)/3);
-        for(int j=0;j<cnt;j++)
-            floor1(n-i);
-        printf("\n");
-        for(int j=0;j<cnt;j++)
-            floor2(n-i);
-        printf("\n");
-        for(int j=0;j<cnt;j++)
-            floor3(n-i);
-        printf("\n");   
-        i+=3;
-    }
+	//init	
+	map[0][0] = '*';
+
+	map[1][0] = '*';
+	map[1][1] = ' ';
+	map[1][2] = '*';
+		
+	map[2][0] = '*';
+	map[2][1] = '*';
+	map[2][2] = '*';
+	map[2][3] = '*';
+	map[2][4] = '*';
+	
+	// copy
+	for(i=6; i<=n; i*=2) {
+		arrayCopy(0, i/2, i-1);
+		arrayCopy(i, i/2, i-1);	
+	}
+		
+	// prn
+	for(i=0; i<n; i++) {
+		for(j=n-1; j>i; j--) {
+			printf(" ");
+		}
+		for(j=0; j<(2*(i+1))-1; j++) {
+			printf("%c", (map[i][j] == '*' ? '*' : ' '));
+		}
+		for(j=n-1; j>i; j--) {
+			printf(" ");
+		}
+		printf("\n");
+	}
 
     return 0;
 }
 
-void space(int n) {
-    while(n--) {
-        printf(" ");
-    }
-}
-
-void floor1(int n) {
-    space(n-1);
-    printf("*");
-    space(n-1);
-}
-
-void floor2(int n) {
-    space(n-2);
-    printf("* *");
-    space(n-2);
-}
-
-void floor3(int n) {
-    space(n-3);
-    printf("*****");
-    space(n-3);
-}
-
-int count(int n) {
-    if(n==1)
-        return 1;
-    return 2 * count(n/2);
-}
+/*
+1 *                        
+3 * *                       
+5 *****                      
+7 *     *                     
+9 * *   * *                    
+11***** *****                   
+13*           *                  
+15* *         * *                 
+17*****       *****                
+19*     *     *     *               
+21* *   * *   * *   * *              
+23***** ***** ***** *****             
+  *                       *            
+  * *                     * *           
+  *****                   *****          
+  *     *                 *     *         
+  * *   * *               * *   * *        
+  ***** *****             ***** *****       
+  *           *           *           *      
+  * *         * *         * *         * *     
+  *****       *****       *****       *****    
+  *     *     *     *     *     *     *     *   
+  * *   * *   * *   * *   * *   * *   * *   * *  
+  ***** ***** ***** ***** ***** ***** ***** *****
+*/
