@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-static int _FIBO[50];
+static long long _FIBO[30];
 
 int main(){
 
@@ -9,12 +9,12 @@ int main(){
 	_FIBO[1] = 1;
 	_FIBO[2] = 1;
 	
-	for(i=3; i<=45; i++) {
+	for(i=3; i<=20; i++) {
 		_FIBO[i] = _FIBO[i-1] + _FIBO[i-2];
 	}
 	
 	scanf("%d", &n);
-	printf("%d", _FIBO[n]);
+	printf("%ld", _FIBO[n]);
 
 	return 0;
 }
