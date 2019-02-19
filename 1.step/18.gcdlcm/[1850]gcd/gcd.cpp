@@ -1,21 +1,32 @@
 #include <stdio.h>
 
+long long int gcd(long long int a, long long int b){
+	while(b!=0){
+		long long int r = a%b;
+		a= b;
+		b= r;
+	}
+	return a;
+}
+
 int main(){
 	
-	int n1, n2, n3;
-	
-	scanf("%d %d", &n1, &n2);
+	long long int n1, n2, n3, g;
+		
+	scanf("%lld %lld", &n1, &n2);
 
 	if (n2 > n1) {
 		n3 = n1;
 		n1 = n2;
 		n2 = n3;
-	} else if(n2 == n1) {
-		n2 = 0;
 	}
-
-	for(int i=0; i<n1-n2; i++) {
+	
+	g = gcd(n1, n2);
+	
+	for(long long int i=0; i<g; i++) {
 		printf("1");
 	}
+	printf("\n");
+	
 	return 0;
 }
